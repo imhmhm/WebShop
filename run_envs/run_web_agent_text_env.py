@@ -12,7 +12,8 @@ from web_agent_site.models import RandomPolicy
 from web_agent_site.utils import DEBUG_PROD_SIZE
 
 if __name__ == '__main__':
-    env = gym.make('WebAgentTextEnv-v0', observation_mode='text', num_products=DEBUG_PROD_SIZE)
+    env = gym.make('WebAgentTextEnv-v0', observation_mode='text', num_products=DEBUG_PROD_SIZE,
+                   disable_env_checker=True)
     env.reset()
     
     try:
