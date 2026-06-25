@@ -22,6 +22,7 @@ sed -i.bak '/conda activate \$ENV_NAME/d' /home/ma-user/init_mtp.sh
 
 ```bash
 conda create --name webshop --clone PyTorch-2.7.1
+conda activate webshop
 ```
 
 ## 3. 安装依赖
