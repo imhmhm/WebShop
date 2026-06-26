@@ -1,9 +1,9 @@
-# WebShop WebStudio 环境搭建指南
+# WebShop -- WebStudio 环境搭建指南
 
-既然您都看到这了，说明您需要在 webstudio 环境搭建 WebShop
+既然您都看到这了，说明您已经知道 WebStudio 是什么，并且需要在 WebStudio 环境搭建 WebShop
 
 > ⚠️ 前提：
-> 1. 您使用了`ailab-910b-pt_2.9.0-sgl_0.5.9-vllm_0.18.0-cann_9.0.0-py_3.11:25.6.1.401`镜像启动 webstudio
+> 1. 您使用了`ailab-910b-pt_2.9.0-sgl_0.5.9-vllm_0.18.0-cann_9.0.0-py_3.11:25.6.1.401`镜像启动 WebStudio
 > 2. 脚本中多处标注 `[webstudio]` 的步骤，是因为 WebStudio 环境无法访问 Google Drive、无法在线安装 spaCy 语言包等，可以从华山平台复制离线数据/包，具体地址私聊获取
 > 3. 虽然镜像内默认conda环境名是`PyTorch-2.7.1`（基础镜像自带），但实际已经升级`torch==2.9.0`，（历史问题没有修改，此处不赘述原因）
 ---
@@ -30,6 +30,8 @@ conda activate webshop
 ### 3.1 Python 依赖
 
 ```bash
+git clone -b webstudio https://github.com/imhmhm/WebShop.git
+cd WebShop
 pip install -r requirements_webstudio.txt
 ```
 
