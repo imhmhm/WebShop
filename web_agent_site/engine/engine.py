@@ -227,13 +227,17 @@ def clean_product_keys(products):
     return products
 
 
-def load_products(filepath, num_products=None, human_goals=True):
+def load_products(filepath, attrpath=None, num_products=None, human_goals=True):
     # TODO: move to preprocessing step -> enforce single source of truth
+    # verl-agent: attrpath parameter (defaults to DEFAULT_ATTR_PATH for
+    # backward compat with upstream callers that don't pass it).
+    if attrpath is None:
+        attrpath = DEFAULT_ATTR_PATH
     with open(filepath) as f:
         products = json.load(f)
     print('Products loaded.')
     products = clean_product_keys(products)
-    
+
     # with open(DEFAULT_REVIEW_PATH) as f:
     #     reviews = json.load(f)
     all_reviews = dict()
@@ -245,7 +249,7 @@ def load_products(filepath, num_products=None, human_goals=True):
     if human_goals:
         with open(HUMAN_ATTR_PATH) as f:
             human_attributes = json.load(f)
-    with open(DEFAULT_ATTR_PATH) as f:
+    with open(attrpath) as f:
         attributes = json.load(f)
     with open(HUMAN_ATTR_PATH) as f:
         human_attributes = json.load(f)
