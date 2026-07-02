@@ -85,7 +85,7 @@ pip install en_core_web_sm-*.whl
 ```bash
 cd search_engine
 mkdir -p resources resources_100 resources_1k resources_100k
-python convert_product_file_format.py   # 将 items.json 转换为所需的文档格式
+python convert_product_file_format_verl_agent.py   # 将 items.json 转换为所需的文档格式
 mkdir -p indexes
 ./run_indexing.sh
 cd ..
